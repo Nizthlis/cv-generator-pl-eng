@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Generator CV</title>
+    <link rel="stylesheet" href="styl3.css">
+    <meta name="description" content="laboratorium">
+    <meta name="author" content="Patryk Jarosławski">
+</head>
+<body>
+    
+    
+    <label for="cvTemplate">Wybierz wzór CV:</label>
+    <select id="cvTemplate" onchange="changeTemplate()">
+        <option value="classic">Klasyczny</option>
+        <option value="modern">Nowoczesny</option>
+    </select>
+    
+    
+    <select id="language" onchange="changeLanguage()">
+        <option value="pl">Polski</option>
+        <option value="en">English</option>
+        
+    </select>
+
+    <div id="cvContainer" class="cv-classic">
+
+    <div class="top"></div>
+    <label for="colorSelect">Wybierz kolor:</label>
+    <select id="colorSelect" onchange="changeColor()">
+        <option value="green">Zielony</option>
+        <option value="blue">Niebieski</option>
+        <option value="yellow">Żółty</option>
+        <option value="red">Czerwony</option>
+    
+    </select>
+    <div class="left"> 
+        
+    
+        <ul>
+            <label class="form-label" for="image">Twoje zdjęcie</label><br>
+            <input name="image" type="file" class="form-control image" id="image" accept="image/*" onchange="previewImage()"><br>
+            <div class="image-container">
+                <img id="imagePreview" src="#" alt="Twoje zdjęcie" style="display: none; max-width: 100%; height: auto;">
+            </div><br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <hr>
+
+            <h1>Dane Osobowe</h1><br>
+            <label class="form-label" for="skills">Stanowisko</label>
+            <input name="skills" type="text" class="form-control" id="skills" placeholder="np. Coding, Design">
+
+            <label class="form-label" for="Email">Email</label>
+            <input name="email" type="text" class="form-control" id="email" placeholder="np. janusz@gmail.com">
+            <label class="form-label" for="interests">Numer Telefonu</label>
+            <input name="interests" type="text" class="form-control" id="phone number" placeholder="np. 123987567">
+            <h2>Umiejętności</h2>
+            <textarea id="abilities" rows="4" cols="50">
+                „” 
+            </textarea>
+            <h3>Języki Obce</h3>
+            <textarea id="jezyk" rows="4" cols="50">
+                „” 
+            </textarea>
+        </ul>
+    </div>
+
+    <div class="right">
+        <label class="form-label" for="fname">Imię i Nazwisko:</label>
+    <input name="fname" type="text" class="form-control" id="fname" placeholder="np. Jan">
+        
+            <label class="form-label" for="experience">Doświadczenie</label>
+            <textarea name="experience" class="form-control" id="experience" placeholder="np. Web Developer at XYZ" rows="5" cols="50"></textarea>
+        
+            <label class="form-label" for="education">Wykształcenie</label>
+            <textarea name="education" class="form-control" id="education" placeholder="np. Bachelor's in IT" rows="5" cols="50"></textarea><br>
+            <button id="addSection">Dodaj sekcję</button>
+<div id="sectionsContainer"></div>
+
+        </div>
+        
+    </section>
+    <div class="footer">
+    
+        <h2>Klauzula Rodo</h2>
+        
+        <label for="rodoMessage"></label>
+        <textarea id="rodoMessage" rows="6" cols="400">
+            „Wyrażam zgodę na przetwarzanie moich danych osobowych dla potrzeb niezbędnych do realizacji procesu rekrutacji zgodnie z Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r.” 
+        </textarea>
+    </div>
+    </div>
+    
+    <div class="down"> 
+    <script>
+  // Funkcja zapisująca dane do localStorage
+function saveData() {
+    localStorage.setItem("fname", document.getElementById("fname").value);
+    localStorage.setItem("cvTemplate", document.getElementById("cvTemplate").value);
+    localStorage.setItem("languages", document.getElementById("language").value);
+    localStorage.setItem("colorSelect", document.getElementById("colorSelect").value);
+    localStorage.setItem("skills", document.getElementById("skills").value);
+    localStorage.setItem("email", document.getElementById("email").value); 
+    localStorage.setItem("phone", document.getElementById("phone number").value); 
+    localStorage.setItem("experience", document.getElementById("experience").value);
+    localStorage.setItem("education", document.getElementById("education").value);
+    
+    // Zapisz obrazek
+    const imageInput = document.getElementById("image");
+    if (imageInput.files && imageInput.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            localStorage.setItem("image", e.target.result); // Zapisuje obrazek jako data URL
+        };
+        reader.readAsDataURL(imageInput.files[0]);
+    }
+
+    // Zapisz dane z textarea
+    localStorage.setItem("rodoMessage", document.getElementById("rodoMessage").value); 
+    localStorage.setItem("abilities", document.getElementById("abilities").value); 
+    localStorage.setItem("jezyk", document.getElementById("jezyk").value); 
+}
+
+// Funkcja ładująca dane z localStorage przy starcie
+function loadData() {
+    document.getElementById("fname").value = localStorage.getItem("fname") || "";
+    document.getElementById("cvTemplate").value = localStorage.getItem("cvTemplate") || "classic";
+    document.getElementById("language").value = localStorage.getItem("language") || "pl";
+    document.getElementById("colorSelect").value = localStorage.getItem("colorSelect") || "green";
+    document.getElementById("skills").value = localStorage.getItem("skills") || "";
+    document.getElementById("email").value = localStorage.getItem("email") || ""; 
+    document.getElementById("phone number").value = localStorage.getItem("phone") || ""; 
+    document.getElementById("experience").value = localStorage.getItem("experience") || "";
+    document.getElementById("education").value = localStorage.getItem("education") || "";
+
+    // Ładowanie danych z textarea
+    document.getElementById("rodoMessage").value = localStorage.getItem("rodoMessage") || ""; 
+    document.getElementById("abilities").value = localStorage.getItem("abilities") || ""; 
+    document.getElementById("jezyk").value = localStorage.getItem("jezyk") || ""; 
+
+    // Ładowanie obrazka
+    const imagePreview = document.getElementById("imagePreview");
+    const savedImage = localStorage.getItem("image");
+    if (savedImage) {
+        imagePreview.src = savedImage; 
+        imagePreview.style.display = "block"; 
+    }
+}
+
+// Usuwanie danych z localStorage
+function clearStorage() {
+    localStorage.clear();
+    loadData(); 
+    
+    document.getElementById("rodoMessage").value = 
+        "„Wyrażam zgodę na przetwarzanie moich danych osobowych dla potrzeb niezbędnych do realizacji procesu rekrutacji zgodnie z Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r.”";
+
+    loadData(); 
+}
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    loadData();
+    
+    
+    const inputsAndTextareas = document.querySelectorAll('input[type="text"], textarea');
+    
+    inputsAndTextareas.forEach(input => {
+        input.addEventListener('input', saveData);
+    });
+    
+    const imageInput = document.getElementById('image');
+    
+    imageInput.addEventListener('change', function() {
+        saveData(); 
+        previewImage(); 
+    });
+});
+
+
+
+    </script>
+<button onclick="window.print()">drukuj</button>
+<script src="script.js"></script>
+</body>
+</html>

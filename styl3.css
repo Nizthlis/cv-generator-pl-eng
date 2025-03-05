@@ -1,0 +1,404 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 10px;
+}
+* {
+    margin: 0px;
+}
+body {
+    font-family: Calibri;
+    padding: 0;
+    margin: 0;}
+
+   .cv-classic{ 
+
+.top{float: top;
+    font-size: 20px;
+    width: 150px;
+    background-color: #721616;
+}
+.left {
+    float: left;
+    font-size: 20px;
+    text-align: left;
+    width:   22%;
+    flex: 1; 
+    padding: 20px;
+    height: 900px;
+    margin-bottom: 420px;
+    
+}
+.h1{
+    margin-top: 150px;
+}
+.right {
+    float: right;
+    text-align: left;
+    font-size: 35px;
+    width:   75%;
+    flex: 1; 
+    padding: 20px;
+    height: 900px;
+    margin-bottom: 420px;
+}
+.hr{}
+
+
+img {
+    float: left;
+    width: 100px; 
+    height: auto;
+    margin-bottom: 10px;
+}
+
+
+
+footer {
+    
+    
+    
+        position: absolute; 
+        bottom: 0; 
+        left: 0; 
+        z-index: 10;
+    
+    text-align: center;
+}
+
+
+
+  
+  
+  
+  .image-container {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px; 
+}
+
+#imagePreview {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+label {
+    border: none;
+    outline: none;
+    display: block;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+input, select {
+    border: none;
+    outline: none;
+    padding: 8px;
+    font-size: 16px;
+}
+
+
+
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 20px;
+}
+
+.cv-classic h1 {
+    background-color: #ddd;
+    color: #000;
+    text-align: center;
+}
+
+.cv-classic .left {
+    background-color: #eee;
+}
+
+.cv-classic .right {
+    background-color: #fff;
+}
+
+
+body {
+    font-family: Calibri, sans-serif; 
+    padding: 0;
+    margin: 0;
+}
+
+.top {
+    font-size: 20px;
+    background-color: #721616;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+}
+
+
+/* Style dla wersji nowoczesnej */
+.cv-modern {
+    
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+#cvContainer {
+    background: white;
+    width: auto;  
+    height: auto; 
+    padding: 20mm;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+.top {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid black;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.image-container {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid black;
+    position: absolute;
+    margin-top: 20px;
+    right: 20px;
+    margin-top: 20px;
+    
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.personal-info {
+    flex-grow: 1;
+}
+
+h1 {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 5px 0;
+}
+
+h2 {
+    font-size: 18px;
+    font-weight: 600;
+    border-bottom: 1px solid black;
+    padding-bottom: 3px;
+    margin-top: 10px;
+}
+
+h3 {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 5px 0;
+}
+
+label {
+    font-weight: bold;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.left {
+    width: 100%;
+}
+
+.right {
+    width: 100%;
+}
+
+section {
+    margin-bottom: 10px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 6px;
+    margin: 3px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+textarea {
+    resize: none;
+    height: 50px;
+}
+
+.footer {
+    font-size: 10px;
+    text-align: justify;
+}
+
+
+@media print {
+    body {
+        background: none;
+    }
+
+    #cvContainer {
+        box-shadow: none;
+        width: 100%;
+        height: auto;
+        padding: 15mm;
+    }
+
+    button {
+        display: none;
+    }
+}
+@media print {
+
+    select,
+    button,
+    #fileInput,
+    #fileName,
+    input[type="file"],
+    label[for="cvTemplate"],
+    
+    label[for="colorSelect"],
+    
+    label[for="image"]
+    
+
+    {
+        display: none !important;
+      
+    }
+
+    textarea {
+        border: none !important;
+       
+        outline: none !important;
+     
+        box-shadow: none !important;
+       
+        background-color: transparent !important;
+       
+        color: black !important;
+        
+    }
+}
+
+@media print {
+    select,
+    button,
+    #fileInput,
+    #fileName,
+    input[type="file"],
+    label[for="cvTemplate"], 
+    label[for="colorSelect"], 
+    label[for="image"] { 
+        display: none !important; 
+    }
+
+    textarea {
+        border: none !important; 
+        outline: none !important; 
+        box-shadow: none !important; 
+        background-color: transparent !important; 
+        color: black !important; 
+        
+            resize: none !important;
+        
+    }
+}
+       
+    }
+    
+@media print {
+
+    select,
+    button,
+    #fileInput,
+    #fileName,
+    input[type="file"],
+    label[for="cvTemplate"],
+    
+    label[for="colorSelect"],
+    
+    label[for="image"]
+    
+
+    {
+        display: none !important;
+      
+    }
+
+    textarea {
+        border: none !important;
+        
+        outline: none !important;
+        
+        box-shadow: none !important;
+       
+        background-color: transparent !important;
+       
+        color: black !important;
+         
+    }
+}
+
+@media print {
+    select,
+    button,
+    #fileInput,
+    #fileName,
+    input[type="file"],
+    label[for="cvTemplate"], 
+    label[for="colorSelect"], 
+    label[for="image"] { 
+        display: none !important; 
+        
+            resize: none !important;
+        
+    }
+
+    textarea {
+        border: none !important; 
+        outline: none !important; 
+        box-shadow: none !important; 
+        background-color: transparent !important; 
+        color: black !important; 
+    }
+}
